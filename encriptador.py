@@ -2,6 +2,7 @@
 def CreateFile():                           #Solo usado al principio para crear el .txt
     archivo = open("text.txt","a")         #Crea el archivo, verificando si existe o no
     archivo.close()
+    print("File was created")
 
 def ReadFile():
     archivo = open("text.txt", "r")
@@ -27,7 +28,7 @@ def EncryptFile(content):                   #Cada vez que se llama a esta funcio
     archivo.write(encryptedMessage)
     print("Text has been successfully re-written as " + encryptedMessage)
 
-
-welcomeText = input("Ingrese el texto a encriptar: ")
-WriteWelcomeText(welcomeText)
+welcomeMessage = input("Ingrese el texto a encriptar: ")
+CreateFile()
+WriteWelcomeText(welcomeMessage)
 EncryptFile(ReadFile())                     #Le mando el valor del texto a la funcion encriptadora
